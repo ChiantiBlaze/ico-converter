@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 
 	ICO_Converter window;
 
-	window.resize(300, 420);
+	window.setFixedSize(460,300);
 	window.setWindowTitle("ICO Converter v1.0");
 	window.show();
 
