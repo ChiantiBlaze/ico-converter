@@ -18,12 +18,12 @@ ICO_Converter :: ICO_Converter(QWidget *parent) : QWidget(parent)
 	QLabel *canvas_trans = new QLabel("", this);
 
 	/* transparent background */
-	QPixmap *transparent = new QPixmap("trans.png");
+	QPixmap *transparent = new QPixmap("src/trans.png");
 	QPixmap trans(transparent->scaled(200,200,Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
 	canvas_trans->setPixmap(trans);
 
 	/* actual image preview */
-	QPixmap *img = new QPixmap("sample.png");
+	QPixmap *img = new QPixmap("sample2.png");
 	QPixmap canvas_img(img->scaled(200,200,Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
 	canvas_frame->setPixmap(canvas_img);
 
@@ -38,6 +38,8 @@ ICO_Converter :: ICO_Converter(QWidget *parent) : QWidget(parent)
 
 	QRadioButton *crop_btn_cover = new QRadioButton("cover");
 	QRadioButton *crop_btn_contain = new QRadioButton("contain");
+
+	crop_btn_cover->setChecked(true);
 
 	crop_group_grid->addWidget(crop_btn_cover, 0,0,1,1);
 	crop_group_grid->addWidget(crop_btn_contain, 0,1,1,1);
